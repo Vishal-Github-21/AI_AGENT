@@ -7,7 +7,7 @@ dotenv.config()
 
 const PORT=process.env.PORT || 3000
 
-console.log(process.env.MONGO_URI)
+// console.log(process.env.MONGO_URI)
 
 const app=express()
 
