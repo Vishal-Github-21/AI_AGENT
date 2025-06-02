@@ -2,17 +2,18 @@ import express from "express"
 import mongoose from "mongoose"
 import cors from "cors"
 import dotenv from "dotenv"
+import userRoutes from "./routers/user.js"
+
 
 dotenv.config()
 
 const PORT=process.env.PORT || 3000
-
-// console.log(process.env.MONGO_URI)
-
 const app=express()
 
 app.use(cors())
 app.use(express.json())
+
+app.use("/api/auth",userRoutes)
 
 mongoose
 .connect(process.env.MONGO_URI)
